@@ -30,6 +30,7 @@ export const config: TemplateConfig = {
       "slug",
       "photoGallery",
       "c_relatedMenuItems.name",
+      "c_relatedMenuItems.price",
       "c_relatedMenuItems.slug",
       "c_relatedMenuItems.photoGallery",
       "c_relatedMenuItems.richTextDescription",
@@ -106,7 +107,9 @@ const Menu: Template<TemplateRenderProps> = ({
                 image={item.photoGallery[0].image}
                 layout="fill"
             />
-            <div className="name pt-2 text-2xl text-center font-bold">{item.name}</div>
+            <div className="name pt-2 text-2xl text-center font-bold">{item.name}
+                <span className="italic text-xl font-normal"> - ${item.price.value}</span>
+            </div>
         </a>
       </div>
   ));
