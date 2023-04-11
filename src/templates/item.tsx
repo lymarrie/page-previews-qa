@@ -1,7 +1,6 @@
 import * as React from "react";
 import PageLayout from "../components/PageLayout";
 import Banner from "../components/Banner";
-import MenuSection from "../components/MenuSection";
 import Favicon from "../assets/images/yext-favicon.ico";
 import "../index.css";
 import {
@@ -14,6 +13,7 @@ import {
   HeadConfig,
 } from "@yext/pages";
 import { Image } from "@yext/pages/components";
+import { Markdown } from "@yext/react-components";
 
 
 export const config: TemplateConfig = {
@@ -102,7 +102,10 @@ const Item: Template<TemplateRenderProps> = ({
                     image={photoGallery[0].image}
                     layout="fill"
                 />
-                <div>{richTextDescription}</div>
+                {richTextDescription && 
+                <div className="prose prose-a:text-blue-600">
+                  <Markdown content={richTextDescription}/>
+                </div>}              
             </div>
           </div>
         </div>
