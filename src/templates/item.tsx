@@ -30,6 +30,8 @@ export const config: TemplateConfig = {
       "slug",
       "photoGallery",
       "richTextDescription",
+      "c_richTextDescriptionV2",
+      "c_markdown",
       "price",
       "c_itemCategory",
       "c_relatedMenu.name",
@@ -82,6 +84,8 @@ const Item: Template<TemplateRenderProps> = ({
     name,
     price,
     richTextDescription,
+    c_richTextDescriptionV2,
+    c_markdown,
     photoGallery,
     slug,
     c_relatedMenu,
@@ -102,10 +106,15 @@ const Item: Template<TemplateRenderProps> = ({
                     image={photoGallery[0].image}
                     layout="fill"
                 />
-                {richTextDescription && 
+                {c_markdown && 
                 <div className="prose prose-a:text-blue-600">
-                  <Markdown content={richTextDescription}/>
-                </div>}              
+                  <Markdown content={c_markdown.markdown}/>
+                </div>}  
+                {/* {c_richTextDescriptionV2 && 
+                  <div className="prose prose-a:text-blue-600">
+                    <Markdown content={c_markdown.markdown}/>
+                  </div>
+                }             */}
             </div>
           </div>
         </div>
