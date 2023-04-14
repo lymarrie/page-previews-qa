@@ -1,6 +1,7 @@
 import * as React from "react";
 import PageLayout from "../components/PageLayout";
 import Banner from "../components/Banner";
+import MenuCard from "../components/MenuCard";
 import MenuSection from "../components/MenuSection";
 import Favicon from "../assets/images/yext-favicon.ico";
 import "../index.css";
@@ -14,6 +15,7 @@ import {
   HeadConfig,
 } from "@yext/pages";
 import { Image } from "@yext/pages/components";
+import MarkdownToJsx from 'markdown-to-jsx';
 
 
 export const config: TemplateConfig = {
@@ -100,48 +102,15 @@ const Menu: Template<TemplateRenderProps> = ({
    });
  
    const tacoDivs = tacos.map((item:any, key:number) => (
-      <div key={key} className="card p-5 border-2 rounded-xl space-y-3 bg-gray-100 drop-shadow-md">
-        <a href={item.slug}>
-            <Image
-                className="rounded-xl w-100 h-auto"
-                image={item.photoGallery[0].image}
-                layout="fill"
-            />
-            <div className="name pt-2 text-2xl text-center font-bold">{item.name}
-                <span className="italic text-xl font-normal"> - ${item.price.value}</span>
-            </div>
-        </a>
-      </div>
+      <MenuCard item={item} />
   ));
  
    const quesadillaDivs = quesadillas.map((item:any, key:number) => (
-      <div key={key} className="card p-5 border-2 rounded-xl space-y-3 bg-gray-100 drop-shadow-md">
-        <a href={item.slug}>
-            <Image
-                className="rounded-xl w-100 h-auto"
-                image={item.photoGallery[0].image}
-                layout="fill"
-            />
-            <div className="name pt-2 text-2xl text-center font-bold">{item.name}
-                <span className="italic text-xl font-normal"> - ${item.price.value}</span>
-            </div>        
-        </a>
-      </div>
+      <MenuCard item={item} />
   ));
  
    const drinkDivs = drinks.map((item:any, key:number) => (
-      <div key={key} className="card p-5 border-2 rounded-xl space-y-3 bg-gray-100 drop-shadow-md">
-        <a href={item.slug}>
-            <Image
-                className="rounded-xl w-100 h-auto"
-                image={item.photoGallery[0].image}
-                layout="fill"
-            />
-            <div className="name pt-2 text-2xl text-center font-bold">{item.name}
-                <span className="italic text-xl font-normal"> - ${item.price.value}</span>
-            </div>        
-        </a>
-      </div>
+      <MenuCard item={item} />
   ));
 
   return (
