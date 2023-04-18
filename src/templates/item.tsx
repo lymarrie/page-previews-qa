@@ -109,7 +109,7 @@ const Item: Template<TemplateRenderProps> = ({
                 />
                 {c_markdown && 
                 <div className="prose prose-a:text-blue-600">
-                  <Markdown content="*some text*"/>
+                  <Markdown content={c_markdown.markdown}/>
                 </div>}  
                 {/* {c_richTextDescriptionV2 && 
                   <div className="prose prose-a:text-blue-600">
