@@ -13,15 +13,13 @@ import {
   HeadConfig,
 } from "@yext/pages";
 import { Image } from "@yext/pages/components";
-import { Markdown } from "@yext/react-components";
 
 
 export const config: TemplateConfig = {
   stream: {
     $id: "menu-item-stream",
     filter: {
-      entityTypes: ["ce_menuItem"],
-      entityIds: ["tacos-adobada", "drinks-aguas-frescas", "tacos-pollo-asado", "drinks-horchata"]
+      entityTypes: ["ce_menuItem"]
     },
     fields: [
       "id",
@@ -107,10 +105,10 @@ const Item: Template<TemplateRenderProps> = ({
                     image={photoGallery[0].image}
                     layout="fill"
                 />
-                {c_markdown && 
+                {/* {c_markdown && 
                 <div className="prose prose-a:text-blue-600">
                   <Markdown content="*some text*"/>
-                </div>}  
+                </div>}  */}
                 {/* {c_richTextDescriptionV2 && 
                   <div className="prose prose-a:text-blue-600">
                     <Markdown content={c_markdown.markdown}/>
