@@ -21,7 +21,6 @@ export const config: TemplateConfig = {
     $id: "menu-item-stream",
     filter: {
       entityTypes: ["ce_menuItem"],
-      entityIds: ["tacos-adobada", "drinks-aguas-frescas", "tacos-pollo-asado", "drinks-horchata"]
     },
     fields: [
       "id",
