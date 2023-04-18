@@ -13,7 +13,6 @@ import {
   GetHeadConfig,
   HeadConfig,
 } from "@yext/pages";
-import { Markdown } from "@yext/react-components";
 
 export const config: TemplateConfig = {
   stream: {
@@ -81,7 +80,6 @@ const Index: Template<TemplateRenderProps> = ({
       <PageLayout>
         <Banner name={"Turtlehead Tacos"} />
         <div className="centered-container">
-        <Markdown content="*some text*"/>
           <div className="section space-y-14 px-10">
             <DirectoryRootGrid
               name={"Turtlehead Tacos"}
